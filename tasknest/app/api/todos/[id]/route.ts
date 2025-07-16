@@ -3,7 +3,7 @@ import clientPromise from "../../../server/mongodb";
 import { getUserIdFromRequest } from "../../../server/jwt";
 import { ObjectId } from "mongodb";
 
-export async function PUT(request: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(request: Request, { params }: { params: { id: string } }) {
   try {
     const userId = getUserIdFromRequest(request as any);
     if (!userId) {
